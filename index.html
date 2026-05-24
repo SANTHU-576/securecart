@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport"
+  content="width=device-width, initial-scale=1.0">
+
+  <title>SecureCart</title>
+
+  <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<!-- Loader -->
+
+<div class="loader" id="loader">
+
+  <div class="spinner"></div>
+
+</div>
+
+<!-- Navbar -->
+
+<nav class="navbar">
+
+  <h1 class="logo">
+    SecureCart
+  </h1>
+
+  <input
+    type="text"
+    id="search"
+    placeholder="Search products..."
+    onkeyup="searchProducts()"
+  >
+
+  <button id="dark-btn"
+  onclick="toggleDarkMode()">
+    🌙
+  </button>
+
+  <ul class="nav-links">
+
+    <li><a href="#">Home</a></li>
+
+    <li><a href="#">Products</a></li>
+
+    <li>
+
+      <a href="#">
+        Cart 🛒
+        <span id="cart-count">
+          0
+        </span>
+      </a>
+
+    </li>
+
+    <li>
+
+      <a href="#"
+      onclick="openProfile()">
+
+        Profile 👤
+
+      </a>
+
+    </li>
+
+    <li>
+
+      <a
+        href="#"
+        class="login-btn"
+        id="loginText"
+        onclick="openLogin()"
+      >
+
+        Login
+
+      </a>
+
+    </li>
+
+  </ul>
+
+</nav>
+
+<!-- Hero -->
+
+<section class="hero">
+
+  <h2>
+    Welcome to SecureCart
+  </h2>
+
+  <p>
+    Safe & Smart Online Shopping
+  </p>
+
+  <button>
+    Shop Now
+  </button>
+
+</section>
+
+<!-- Products -->
+
+<section
+class="products"
+id="productsSection"
+style="display:none;"
+>
+
+<!-- Smartphone -->
+
+<div class="product-card">
+
+  <a href="smartphone.html">
+
+    <img
+      src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=400"
+      alt="Smartphone"
+    >
+
+  </a>
+
+  <h3>Smartphone</h3>
+
+  <p>₹29999</p>
+
+  <div class="rating">
+    ⭐⭐⭐⭐⭐
+  </div>
+
+  <div class="quantity-box">
+
+    <button onclick="decreaseQuantity(this)">
+      -
+    </button>
+
+    <span class="qty">
+      1
+    </span>
+
+    <button onclick="increaseQuantity(this)">
+      +
+    </button>
+
+  </div>
+
+  <button onclick="addToCart()">
+    Add to Cart
+  </button>
+
+  <button onclick="openCheckout()">
+    Buy Now
+  </button>
+
+  <button onclick="addWishlist()">
+    ❤️ Wishlist
+  </button>
+
+</div>
+
+<!-- Laptop -->
+
+<div class="product-card">
+
+  <a href="laptop.html">
+
+    <img
+      src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=400"
+      alt="Laptop"
+    >
+
+  </a>
+
+  <h3>Laptop</h3>
+
+  <p>₹54999</p>
+
+  <div class="rating">
+    ⭐⭐⭐⭐
+  </div>
+
+  <div class="quantity-box">
+
+    <button onclick="decreaseQuantity(this)">
+      -
+    </button>
+
+    <span class="qty">
+      1
+    </span>
+
+    <button onclick="increaseQuantity(this)">
+      +
+    </button>
+
+  </div>
+
+  <button onclick="addToCart()">
+    Add to Cart
+  </button>
+
+  <button onclick="openCheckout()">
+    Buy Now
+  </button>
+
+  <button onclick="addWishlist()">
+    ❤️ Wishlist
+  </button>
+
+</div>
+<!-- Camera -->
+
+<div class="product-card">
+
+  <a href="camera.html">
+
+    <img
+      src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=400"
+      alt="Camera"
+    >
+
+  </a>
+
+  <h3>Camera</h3>
+
+  <p>₹39999</p>
+
+  <div class="rating">
+    ⭐⭐⭐⭐⭐
+  </div>
+
+  <div class="quantity-box">
+
+    <button onclick="decreaseQuantity(this)">
+      -
+    </button>
+
+    <span class="qty">
+      1
+    </span>
+
+    <button onclick="increaseQuantity(this)">
+      +
+    </button>
+
+  </div>
+
+  <button onclick="addToCart()">
+    Add to Cart
+  </button>
+
+  <button onclick="openCheckout()">
+    Buy Now
+  </button>
+
+  <button onclick="addWishlist()">
+    ❤️ Wishlist
+  </button>
+
+</div>
+
+<!-- TV -->
+
+<div class="product-card">
+
+  <a href="tv.html">
+
+    <img
+      src="https://images.unsplash.com/photo-1593784991095-a205069470b6?w=400"
+      alt="TV"
+    >
+
+  </a>
+
+  <h3>Smart TV</h3>
+
+  <p>₹45999</p>
+
+  <div class="rating">
+    ⭐⭐⭐⭐
+  </div>
+
+  <div class="quantity-box">
+
+    <button onclick="decreaseQuantity(this)">
+      -
+    </button>
+
+    <span class="qty">
+      1
+    </span>
+
+    <button onclick="increaseQuantity(this)">
+      +
+    </button>
+
+  </div>
+
+  <button onclick="addToCart()">
+    Add to Cart
+  </button>
+
+  <button onclick="openCheckout()">
+    Buy Now
+  </button>
+
+  <button onclick="addWishlist()">
+    ❤️ Wishlist
+  </button>
+
+</div>
+
+<!-- Earbuds -->
+
+<div class="product-card">
+
+  <a href="earbuds.html">
+
+    <img
+      src="https://images.unsplash.com/photo-1588423771073-b8903fbb85b5?w=400"
+      alt="Earbuds"
+    >
+
+  </a>
+
+  <h3>Earbuds</h3>
+
+  <p>₹2999</p>
+
+  <div class="rating">
+    ⭐⭐⭐⭐⭐
+  </div>
+
+  <div class="quantity-box">
+
+    <button onclick="decreaseQuantity(this)">
+      -
+    </button>
+
+    <span class="qty">
+      1
+    </span>
+
+    <button onclick="increaseQuantity(this)">
+      +
+    </button>
+
+  </div>
+
+  <button onclick="addToCart()">
+    Add to Cart
+  </button>
+
+  <button onclick="openCheckout()">
+    Buy Now
+  </button>
+
+  <button onclick="addWishlist()">
+    ❤️ Wishlist
+  </button>
+
+</div>
+
+<!-- Headphones -->
+
+<div class="product-card">
+
+  <a href="headphones.html">
+
+    <img
+      src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=400"
+      alt="Headphones"
+    >
+
+  </a>
+
+  <h3>Headphones</h3>
+
+  <p>₹1499</p>
+
+  <div class="rating">
+    ⭐⭐⭐⭐
+  </div>
+
+  <div class="quantity-box">
+
+    <button onclick="decreaseQuantity(this)">
+      -
+    </button>
+
+    <span class="qty">
+      1
+    </span>
+
+    <button onclick="increaseQuantity(this)">
+      +
+    </button>
+
+  </div>
+
+  <button onclick="addToCart()">
+    Add to Cart
+  </button>
+
+  <button onclick="openCheckout()">
+    Buy Now
+  </button>
+
+  <button onclick="addWishlist()">
+    ❤️ Wishlist
+  </button>
+
+</div>
+
+<!-- Computer -->
+
+<div class="product-card">
+
+  <a href="computer.html">
+
+    <img
+      src="https://images.unsplash.com/photo-1587831990711-23ca6441447b?w=400"
+      alt="Computer"
+    >
+
+  </a>
+
+  <h3>Computer</h3>
+
+  <p>₹65999</p>
+
+  <div class="rating">
+    ⭐⭐⭐⭐⭐
+  </div>
+
+  <div class="quantity-box">
+
+    <button onclick="decreaseQuantity(this)">
+      -
+    </button>
+
+    <span class="qty">
+      1
+    </span>
+
+    <button onclick="increaseQuantity(this)">
+      +
+    </button>
+
+  </div>
+
+  <button onclick="addToCart()">
+    Add to Cart
+  </button>
+
+  <button onclick="openCheckout()">
+    Buy Now
+  </button>
+
+  <button onclick="addWishlist()">
+    ❤️ Wishlist
+  </button>
+
+</div>
+
+<!-- Smart Watch -->
+
+<div class="product-card">
+
+  <a href="smartwatch.html">
+
+    <img
+      src="https://images.unsplash.com/photo-1546868871-7041f2a55e12?w=400"
+      alt="Smart Watch"
+    >
+
+  </a>
+
+  <h3>Smart Watch</h3>
+
+  <p>₹1999</p>
+
+  <div class="rating">
+    ⭐⭐⭐⭐⭐
+  </div>
+
+  <div class="quantity-box">
+
+    <button onclick="decreaseQuantity(this)">
+      -
+    </button>
+
+    <span class="qty">
+      1
+    </span>
+
+    <button onclick="increaseQuantity(this)">
+      +
+    </button>
+
+  </div>
+
+  <button onclick="addToCart()">
+    Add to Cart
+  </button>
+
+  <button onclick="openCheckout()">
+    Buy Now
+  </button>
+
+  <button onclick="addWishlist()">
+    ❤️ Wishlist
+  </button>
+
+</div>
+
+</section>
+
+<!-- Login Popup -->
+
+<div class="login-popup"
+id="loginPopup">
+
+  <div class="login-box">
+
+    <span
+      class="close-btn"
+      onclick="closeLogin()"
+    >
+      &times;
+    </span>
+
+    <h2>
+      Login
+    </h2>
+
+    <input
+      type="email"
+      placeholder="Enter Email"
+    >
+
+    <input
+      type="password"
+      placeholder="Enter Password"
+    >
+
+    <button onclick="loginUser()">
+      Login
+    </button>
+
+  </div>
+
+</div>
+
+<!-- Checkout Popup -->
+
+<div class="checkout-popup"
+id="checkoutPopup">
+
+  <div class="checkout-box">
+
+    <span
+      class="close-btn"
+      onclick="closeCheckout()"
+    >
+      &times;
+    </span>
+
+    <h2>
+      Checkout
+    </h2>
+
+    <input
+      type="text"
+      placeholder="Enter Name"
+    >
+
+    <input
+      type="text"
+      placeholder="Enter Address"
+    >
+
+    <input
+      type="text"
+      placeholder="Enter Mobile Number"
+    >
+
+    <h3>
+      Select Payment Method
+    </h3>
+
+    <div class="payment-methods">
+
+      <button onclick="selectPayment('UPI')">
+        UPI
+      </button>
+
+      <button onclick="selectPayment('Card')">
+        Card
+      </button>
+
+      <button onclick="selectPayment('COD')">
+        COD
+      </button>
+
+    </div>
+
+    <p id="selected-payment">
+      No Payment Method Selected
+    </p>
+
+    <button onclick="placeOrder()">
+      Place Order
+    </button>
+
+  </div>
+
+</div>
+
+<!-- Toast -->
+
+<div class="toast" id="toast">
+
+  Product Added To Cart 🛒
+
+</div>
+
+<!-- Chatbot -->
+
+<div class="chatbot-icon"
+onclick="openChatbot()">
+🤖
+</div>
+
+<div class="chatbot-box"
+id="chatbot">
+
+  <div class="chat-header">
+    SecureBot 🤖
+  </div>
+
+  <div class="chat-body"
+  id="chatBody">
+
+    <p>
+      Hi 👋 Welcome to SecureCart
+    </p>
+
+  </div>
+
+  <input
+    type="text"
+    id="chatInput"
+    placeholder="Ask something..."
+  >
+
+  <button onclick="sendMessage()">
+    Send
+  </button>
+
+</div>
+
+<!-- Profile -->
+
+<div class="profile-popup"
+id="profilePopup">
+
+  <div class="profile-box">
+
+    <span
+      class="close-btn"
+      onclick="closeProfile()"
+    >
+      &times;
+    </span>
+
+    <h2>
+      User Profile 👤
+    </h2>
+
+    <p>
+      Username: User
+    </p>
+
+    <p>
+      Orders: 5
+    </p>
+
+  </div>
+
+</div>
+
+<!-- Admin Dashboard -->
+
+<div class="admin-dashboard">
+
+  <h2>
+    Admin Dashboard 📊
+  </h2>
+
+  <p>
+    Total Products: 10
+  </p>
+
+  <p id="totalOrders">
+    Total Orders: 0
+  </p>
+
+</div>
+
+<!-- Order Tracking -->
+
+<div class="tracking-box">
+
+  <h2>
+    Order Tracking 📦
+  </h2>
+
+  <div class="tracking-status">
+
+    Status:
+    <span id="orderStatus">
+      Pending
+    </span>
+
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
